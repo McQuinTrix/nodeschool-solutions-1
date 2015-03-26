@@ -9,4 +9,5 @@ http.createServer(function (req, res) {
       return chunk.toString().toUpperCase();
     })).pipe(res);
   }
+  req.on('end', res.end);
 }).listen(port);
